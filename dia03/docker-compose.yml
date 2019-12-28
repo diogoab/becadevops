@@ -7,7 +7,5 @@ services:
       - '8080:8080'
     volumes:
       - './jenkins:/var/jenkins_home'
-    deploy:
-      restart_policy:
-        condition: always
+    restart: always
     
