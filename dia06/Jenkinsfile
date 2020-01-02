@@ -6,7 +6,7 @@ node {
     withSonarQubeEnv('sonar') {
       sh "'${MVN}' -f pom.xml clean package sonar:sonar"+
       " -Dsonar.login=admin"+
-      " -Dsonar.password=suasenha"+
+      " -Dsonar.password='${PASSWORD}'"+
       " -Dsonar.projectKey=BecaDevOps:master"
 
     }
