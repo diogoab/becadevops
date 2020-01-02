@@ -3,14 +3,14 @@ pipeline {
         label "master"
     }
     tools {
-        maven "Maven"
+        maven "MAVEN"
     }
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "35.225.49.56:8081"
-        NEXUS_REPOSITORY = "repository-example"
-        NEXUS_CREDENTIAL_ID = "nexus"
+        NEXUS_REPOSITORY = "becadevops-repo"
+        NEXUS_CREDENTIAL_ID = "nexusCredential"
     }
     stages {
         stage("clone code") {
