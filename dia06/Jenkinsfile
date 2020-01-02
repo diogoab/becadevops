@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stages {
+        stage("checkout:git") {
+            steps {
+                git branch: "master", url: "https://github.com/jenkins-docs/simple-java-maven-app"
+            }
+        }
+
+        stage("Sonar:Quality") {     
+            steps {
+                withSonarQubeEnv('sonar')
+                sh '$MVN -f pom.xml clean package sonar:sonar -Dsonar.projectKey=BecaDevOps:master' 
+            }
+        }
+        
+    }
+}
